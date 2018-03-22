@@ -58,3 +58,8 @@ DSWaitingPage.propTypes = {
     phoneNumber: PropTypes.string,
     password: PropTypes.string,
 }
+
+DSWaitingPage.defaultProps = {
+    phoneNumber: '135',
+    password: '123456',
+}
