@@ -9,7 +9,8 @@ import {
     View,
     AppRegistry,
     Dimensions,
-    TextInput
+    TextInput,
+    Alert,
 } from 'react-native';
 
 let widthOfMagin = Dimensions.get('window').width * 0.05;
@@ -79,7 +80,18 @@ export default class DSRegisterPage extends Component {
         this.props.onLoginPressed(this.state.phoneNumber, this.state.password);
     }
     userPressAddressBook() {
-
+        Alert.alert(
+            '提示',
+            '我们的app将要获取您的通讯录',
+            [
+                {text: '我拒绝'},
+                // {text: '哈哈哈'},
+                {text: '我知道了', onPress: this.doGetAddressBook},
+            ]
+        );
+    }
+    doGetAddressBook() {
+        console.log('去获取通讯录');
     }
 }
 
