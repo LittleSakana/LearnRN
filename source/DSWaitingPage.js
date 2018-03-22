@@ -9,6 +9,7 @@ import {
     View,
 }
 from 'react-native';
+import PropTypes from 'prop-types';
 
 export default class DSWaitingPage extends Component {
     constructor(props) {
@@ -52,3 +53,8 @@ let Styles = StyleSheet.create({
         fontSize: 50,
     }
 });
+
+DSWaitingPage.propTypes = {
+    phoneNumber: PropTypes.string,
+    password: PropTypes.string,
+}
