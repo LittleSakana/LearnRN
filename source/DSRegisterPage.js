@@ -84,8 +84,8 @@ export default class DSRegisterPage extends Component {
             '提示',
             '我们的app将要获取您的通讯录',
             [
-                {text: '我拒绝'},
-                // {text: '哈哈哈'},
+                {text: '我拒绝', onPress: (()=>{})},
+                {text: '哈哈哈', style: 'cancel', onPress: (()=>{})},
                 {text: '我知道了', onPress: this.doGetAddressBook},
             ]
         );
