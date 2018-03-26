@@ -13,6 +13,8 @@ import {
     Alert,
 } from 'react-native';
 
+import DSFlexBoxPage from './DSFlexBoxPage';
+
 let widthOfMagin = Dimensions.get('window').width * 0.05;
 
 export default class DSRegisterPage extends Component {
@@ -26,7 +28,8 @@ export default class DSRegisterPage extends Component {
         this.messageInfo = 'Hello world.';
         this.state = {
             phoneNumber: '',
-            password: ''
+            password: '',
+            showFlexBox: '0',
         };
         this.updatePasswrod = this.updatePasswrod.bind(this);
     }
@@ -52,29 +55,39 @@ export default class DSRegisterPage extends Component {
     }
     render() {
         console.log('This is in render method');
-        return (
-            <View style={styles.container}>
-                <TextInput style={styles.textinputStyle}
-                           placeholder={'请输入手机号'}
-                           onChangeText={(newText) => this.updatePhoneNumber(newText)}
-                />
-                <Text style={styles.textPromtStyle}>输入您的手机号码:{this.state.phoneNumber}
-                </Text>
-                <TextInput style={styles.textinputStyle}
-                           placeholder={'请输入您的密码'}
-                           secureTextEntry={true}
-                           onChangeText={this.updatePasswrod}
-                />
-                <Text style={styles.bigTextPromtStyle}
-                    onPress={()=> this.userPressConfirm()}>
-                    登录
-                </Text>
-                <Text style={styles.bigTextPromtStyle}
-                    onPress={()=> this.userPressAddressBook()}>
-                    读取通讯录
-                </Text>
-            </View>
-        );
+        if (this.state.showFlexBox === '1') {
+            return (
+                <DSFlexBoxPage></DSFlexBoxPage>
+            );
+        } else {
+            return (
+                <View style={styles.container}>
+                    <TextInput style={styles.textinputStyle}
+                               placeholder={'请输入手机号'}
+                               onChangeText={(newText) => this.updatePhoneNumber(newText)}
+                    />
+                    <Text style={styles.textPromtStyle}>输入您的手机号码:{this.state.phoneNumber}
+                    </Text>
+                    <TextInput style={styles.textinputStyle}
+                               placeholder={'请输入您的密码'}
+                               secureTextEntry={true}
+                               onChangeText={this.updatePasswrod}
+                    />
+                    <Text style={styles.bigTextPromtStyle}
+                          onPress={()=> this.userPressConfirm()}>
+                        登录
+                    </Text>
+                    <Text style={styles.bigTextPromtStyle}
+                          onPress={()=> this.userPressAddressBook()}>
+                        读取通讯录
+                    </Text>
+                    <Text style={styles.bigTextPromtStyle}
+                          onPress={()=> this.testFlexBox()}>
+                        测试FlexBox
+                    </Text>
+                </View>
+            );
+        }
     }
     userPressConfirm() {
         this.props.onLoginPressed(this.state.phoneNumber, this.state.password);
@@ -92,6 +105,11 @@ export default class DSRegisterPage extends Component {
     }
     doGetAddressBook() {
         console.log('去获取通讯录');
+    }
+    testFlexBox() {
+        this.setState({
+            showFlexBox: '1',
+        });
     }
 }
 

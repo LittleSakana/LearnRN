@@ -37,6 +37,8 @@
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
+		E92D6F262064F38000DD7FD3 /* RNManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E92D6F252064F38000DD7FD3 /* RNManager.m */; };
+		E92D6F2A2064F3B800DD7FD3 /* ContactsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E92D6F292064F3B800DD7FD3 /* ContactsVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -342,6 +344,10 @@
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
+		E92D6F242064F38000DD7FD3 /* RNManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNManager.h; sourceTree = "<group>"; };
+		E92D6F252064F38000DD7FD3 /* RNManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNManager.m; sourceTree = "<group>"; };
+		E92D6F282064F3B800DD7FD3 /* ContactsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContactsVC.h; sourceTree = "<group>"; };
+		E92D6F292064F3B800DD7FD3 /* ContactsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContactsVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -480,6 +486,8 @@
 		13B07FAE1A68108700A75B9A /* LearnRN2 */ = {
 			isa = PBXGroup;
 			children = (
+				E92D6F272064F38A00DD7FD3 /* Business */,
+				E92D6EFE2064F35C00DD7FD3 /* RNManager */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -600,6 +608,24 @@
 				2D16E6721FA4F8DC00B85C8A /* libRCTBlob-tvOS.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		E92D6EFE2064F35C00DD7FD3 /* RNManager */ = {
+			isa = PBXGroup;
+			children = (
+				E92D6F242064F38000DD7FD3 /* RNManager.h */,
+				E92D6F252064F38000DD7FD3 /* RNManager.m */,
+			);
+			path = RNManager;
+			sourceTree = "<group>";
+		};
+		E92D6F272064F38A00DD7FD3 /* Business */ = {
+			isa = PBXGroup;
+			children = (
+				E92D6F282064F3B800DD7FD3 /* ContactsVC.h */,
+				E92D6F292064F3B800DD7FD3 /* ContactsVC.m */,
+			);
+			name = Business;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1118,6 +1144,8 @@
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				E92D6F262064F38000DD7FD3 /* RNManager.m in Sources */,
+				E92D6F2A2064F3B800DD7FD3 /* ContactsVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
