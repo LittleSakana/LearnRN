@@ -14,6 +14,7 @@ import {
 } from 'react-native';
 
 import DSFlexBoxPage from './DSFlexBoxPage';
+import DSViewTransformPage from './DSViewTransformPage';
 
 let widthOfMagin = Dimensions.get('window').width * 0.05;
 
@@ -29,7 +30,7 @@ export default class DSRegisterPage extends Component {
         this.state = {
             phoneNumber: '',
             password: '',
-            showFlexBox: '0',
+            showPageName: '',
         };
         this.updatePasswrod = this.updatePasswrod.bind(this);
     }
@@ -55,9 +56,13 @@ export default class DSRegisterPage extends Component {
     }
     render() {
         console.log('This is in render method');
-        if (this.state.showFlexBox === '1') {
+        if (this.state.showPageName === 'DSFlexBoxPage') {
             return (
                 <DSFlexBoxPage></DSFlexBoxPage>
+            );
+        } else if (this.state.showPageName === 'DSViewTransformPage') {
+            return (
+                <DSViewTransformPage></DSViewTransformPage>
             );
         } else {
             return (
@@ -85,6 +90,10 @@ export default class DSRegisterPage extends Component {
                           onPress={()=> this.testFlexBox()}>
                         测试FlexBox
                     </Text>
+                    <Text style={styles.bigTextPromtStyle}
+                          onPress={()=> this.testViewTransform()}>
+                        测试View变形
+                    </Text>
                 </View>
             );
         }
@@ -108,7 +117,12 @@ export default class DSRegisterPage extends Component {
     }
     testFlexBox() {
         this.setState({
-            showFlexBox: '1',
+            showPageName: 'DSFlexBoxPage',
+        });
+    }
+    testViewTransform() {
+        this.setState({
+            showPageName: 'DSViewTransformPage',
         });
     }
 }
