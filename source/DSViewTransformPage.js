@@ -10,53 +10,102 @@ import {
 } from 'react-native';
 
 export default class DSViewTransformPage extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            bigButtonPointerEvents: null,
+        };
+        this.onBigButtonPressed = this.onBigButtonPressed.bind(this);
+        this.onSmallButtonPressed = this.onSmallButtonPressed.bind(this);
+    }
     render() {
         return (
             <View style={styles.container}>
-                <Text style={styles.welcome0}>
-                    Welcome to DSDevelopment!
+                <Text style={styles.smallButtonStyle}
+                      onPress={this.onSmallButtonPressed}>
+                    Small Button
                 </Text>
-                <Text style={styles.welcome1}>
-                    Welcome to DSDevelopment!
+                <Text style={styles.bigButtonStyle}
+                      onPress={this.onBigButtonPressed}
+                      pointerEvents={this.state.bigButtonPointerEvents}>
+                    Big Button
                 </Text>
-                <Text style={styles.welcome2}>
-                    Welcome to DSDevelopment!
-                </Text>
-                <Text style={styles.welcome3}>
-                    Welcome to DSDevelopment!
-                </Text>
-                <Text style={styles.welcome4}>
-                    Welcome to DSDevelopment!
-                </Text>
-                <Text style={styles.welcome5}>
-                    Welcome to DSDevelopment!
-                </Text>
-                <Text style={styles.welcome6}>
-                    Welcome to DSDevelopment!
-                </Text>
-                <Text style={styles.welcome7}>
-                    Welcome to DSDevelopment!
-                </Text>
-                <Text style={styles.welcome8}>
-                    Welcome to DSDevelopment!
-                </Text>
-                <Text style={styles.welcome9}>
-                    Welcome to DSDevelopment!
-                </Text>
-                <Text style={styles.welcome10}>
-                    Welcome to DSDevelopment!
-                </Text>
+                {/*<Text style={styles.welcome0}>*/}
+                    {/*Welcome to DSDevelopment!*/}
+                {/*</Text>*/}
+                {/*<Text style={styles.welcome1}>*/}
+                    {/*Welcome to DSDevelopment!*/}
+                {/*</Text>*/}
+                {/*<Text style={styles.welcome2}>*/}
+                    {/*Welcome to DSDevelopment!*/}
+                {/*</Text>*/}
+                {/*<Text style={styles.welcome3}>*/}
+                    {/*Welcome to DSDevelopment!*/}
+                {/*</Text>*/}
+                {/*<Text style={styles.welcome4}>*/}
+                    {/*Welcome to DSDevelopment!*/}
+                {/*</Text>*/}
+                {/*<Text style={styles.welcome5}>*/}
+                    {/*Welcome to DSDevelopment!*/}
+                {/*</Text>*/}
+                {/*<Text style={styles.welcome6}>*/}
+                    {/*Welcome to DSDevelopment!*/}
+                {/*</Text>*/}
+                {/*<Text style={styles.welcome7}>*/}
+                    {/*Welcome to DSDevelopment!*/}
+                {/*</Text>*/}
+                {/*<Text style={styles.welcome8}>*/}
+                    {/*Welcome to DSDevelopment!*/}
+                {/*</Text>*/}
+                {/*<Text style={styles.welcome9}>*/}
+                    {/*Welcome to DSDevelopment!*/}
+                {/*</Text>*/}
+                {/*<Text style={styles.welcome10}>*/}
+                    {/*Welcome to DSDevelopment!*/}
+                {/*</Text>*/}
             </View>
         );
+    }
+    onBigButtonPressed() {
+        console.log('Big button pressed');
+    }
+    onSmallButtonPressed() {
+        if (this.state.bigButtonPointerEvents === null) {
+            console.log('big button will not response');
+            this.setState({
+                bigButtonPointerEvents: 'none',
+            });
+            return;
+        }
+        console.log('big button will response');
+        this.setState({
+            bigButtonPointerEvents: null,
+        });
     }
 }
 
 var styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#f5fcff',
+        // justifyContent: 'center',
+        // alignItems: 'center',
+        // backgroundColor: '#f5fcff',
+    },
+    smallButtonStyle: {
+        fontSize: 20,
+        left: 130,
+        top: 50,
+        width: 150,
+        height: 35,
+        backgroundColor: 'grey',
+    },
+    bigButtonStyle: {
+        fontSize: 20,
+        left: 130,
+        top: 65,
+        width: 150,
+        height: 70,
+        backgroundColor: 'grey',
     },
     welcome0: {
         flex: 1,
